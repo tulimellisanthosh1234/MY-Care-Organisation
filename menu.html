@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MyCAre</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="images/mycarelogo.png" alt="MyCAre Logo">
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="loginform.html"  class="signin-btn" onclick="openModal()">Sign In</a></li>
+      </ul>
+    </nav>
+    <section class="hero">
+      <h2>Your Health, Our Priority</h2>
+      <p>Trusted care from licensed professionals</p>
+      <a href="registerform.html" class="btn" onclick="openRegisterModal()">Register</a>
+    </section>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section id="about" class="section">
+      <h2>About Us</h2>
+      <p>We provide compassionate healthcare with state-of-the-art facilities. Our mission is your well-being.</p>
+    </section>
+    <section id="services" class="section services">
+      <h2>Our Services</h2>
+      <div class="service-cards">
+        <div class="card">
+          <h3>General Checkups</h3>
+          <p>Comprehensive routine exams for all ages.</p>  
+        </div>
+        <div class="card">
+          <h3>Specialist Consultations</h3>
+          <p>Expert care in cardiology, neurology, and more.</p>
+        </div>
+        <div class="card">
+          <h3>Emergency Services</h3>
+          <p>24/7 urgent care when you need it most.</p>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="section contact">
+      <h2>Contact Us</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 MyCAre. All rights reserved.
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
+ 

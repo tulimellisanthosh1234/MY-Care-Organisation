@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>User Login</title>
+    <link rel="stylesheet" href="style1.css">
+    <style>
+        /* Popup Styling */
+        .popup {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+        }
+
+        .popup-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            margin: 15% auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .popup .close {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Login Form -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeLoginModal()">&times;</span>
+        <h2>Login</h2>
+        <form id="loginForm" action="login" method="post">
+            <input type="tel" id="phone" name="phone" placeholder="Phone Number" maxlength="10" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+            <button type="reset">Clear</button>
+        </form>
+    </div>
+</div>
+
+<!-- Error Popup Modal -->
+<div id="errorPopup" class="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <p>Invalid phone number or password.</p>
+    </div>
+</div>
+
+<!-- JS Scripts -->
+<script>
+    function closeLoginModal() {
+        document.getElementById('loginModal').style.display = 'none';
+    }
+
+    function closePopup() {
+        document.getElementById("errorPopup").style.display = "none";
+    }
+
+    // Show popup if ?error=1 in URL
+    window.onload = function () {
+        const params = new URLSearchParams(window.location.search);
+        if (params.get("error") === "1") {
+            document.getElementById("errorPopup").style.display = "block";
+        }
+    };
+</script>
+
+</body>
+</html>
